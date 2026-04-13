@@ -4,6 +4,10 @@ A travel landing page built with Next.js 13, TypeScript, and Tailwind CSS.
 
 This project includes a modern homepage, a responsive navbar, a hero section with a custom traveler image, testimonials, partner logos, newsletter, footer, and basic UI-only login and signup pages.
 
+# UI
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/f47b8f81-f41c-4530-9479-968e657c7912" />
+
+
 ## Tech Stack
 
 - Next.js 13
