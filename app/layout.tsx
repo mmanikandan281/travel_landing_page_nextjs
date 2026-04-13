@@ -1,11 +1,17 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Poppins, Volkhov } from 'next/font/google';
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-poppins',
+});
+
+const volkhov = Volkhov({
+  subsets: ['latin'],
+  variable: '--font-volkhov',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins antialiased`}>{children}</body>
+      <body className={`${poppins.variable} ${volkhov.variable} font-poppins antialiased`}>{children}</body>
     </html>
   );
 }

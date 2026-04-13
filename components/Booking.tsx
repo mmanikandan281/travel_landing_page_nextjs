@@ -24,15 +24,17 @@ const steps = [
 
 export default function Booking() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
+    <section className="bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-[#7B8593] font-medium text-sm tracking-[3px] uppercase mb-4">
+            <p className="mb-4 text-[18px] font-semibold text-[#5E6282]">
               Easy and Fast
             </p>
-            <h2 className="text-[42px] md:text-[50px] font-black text-[#181E4B] leading-tight mb-12">
+            <h2
+              className="mb-12 text-[38px] font-bold leading-[1] text-[#14183E] md:text-[50px]"
+              style={{ fontFamily: 'var(--font-volkhov), serif' }}
+            >
               Book Your Next Trip
               <br />
               In 3 Easy Steps
@@ -41,28 +43,24 @@ export default function Booking() {
             <div className="flex flex-col gap-8">
               {steps.map((step, index) => (
                 <div key={index} className="flex items-start gap-5">
-                  <div className={`${step.iconBg} w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-lg`}>
+                  <div className={`${step.iconBg} flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-lg`}>
                     {step.icon}
                   </div>
                   <div>
-                    <h3 className="text-[#181E4B] font-bold text-[16px] mb-1">{step.title}</h3>
-                    <p className="text-[#7B8593] text-[14px] leading-relaxed">{step.description}</p>
+                    <h3 className="mb-1 text-[18px] font-semibold text-[#5E6282]">{step.title}</h3>
+                    <p className="max-w-[395px] text-[15px] leading-7 text-[#5E6282]">{step.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right - Trip Card */}
-          <div className="relative flex justify-center">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#E8F4FD] to-[#F0F8FF] rounded-3xl" />
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="absolute top-10 h-[330px] w-[330px] rounded-full bg-[#59B1E6]/10 blur-3xl" />
 
-            <div className="relative z-10 p-8 w-full max-w-[380px]">
-              {/* Main Trip Card */}
-              <div className="bg-white rounded-3xl shadow-2xl shadow-[#181E4B]/10 overflow-hidden">
-                {/* Card Image */}
-                <div className="relative h-52">
+            <div className="relative z-10 w-full max-w-[430px] p-4">
+              <div className="overflow-hidden rounded-[26px] bg-white shadow-[0_24px_55px_rgba(24,30,75,0.12)]">
+                <div className="relative h-56">
                   <Image
                     src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Trip to Greece"
@@ -71,41 +69,37 @@ export default function Booking() {
                   />
                 </div>
 
-                {/* Card Content */}
-                <div className="p-5">
-                  <h3 className="text-[#181E4B] font-bold text-lg mb-1">Trip To Greece</h3>
-                  <p className="text-[#7B8593] text-sm mb-4">14-29 June | by Robbin jo</p>
+                <div className="p-6">
+                  <h3 className="mb-1 text-lg font-semibold text-[#080809]">Trip To Greece</h3>
+                  <p className="mb-5 text-sm text-[#84829A]">14-29 June | by Robbin jo</p>
 
-                  {/* Action icons */}
-                  <div className="flex items-center gap-4 mb-5">
-                    <button className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#DF6951] transition-colors">
+                  <div className="mb-7 flex items-center gap-4">
+                    <button className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F5F5] transition-colors hover:bg-[#FFE7DB]">
                       <Leaf size={15} className="text-[#7B8593]" />
                     </button>
-                    <button className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#DF6951] transition-colors">
+                    <button className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F5F5] transition-colors hover:bg-[#FFE7DB]">
                       <BarChart2 size={15} className="text-[#7B8593]" />
                     </button>
-                    <button className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#DF6951] transition-colors">
+                    <button className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F5F5] transition-colors hover:bg-[#FFE7DB]">
                       <Navigation size={15} className="text-[#7B8593]" />
                     </button>
                   </div>
 
-                  {/* People going & heart */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-[#7B8593] text-sm">
+                    <div className="flex items-center gap-2 text-sm text-[#84829A]">
                       <Users size={15} />
                       <span>24 people going</span>
                     </div>
-                    <button className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-red-400 transition-colors">
+                    <button className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F5F5] transition-colors hover:bg-[#FFE7DB]">
                       <Heart size={15} className="text-[#7B8593]" />
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* Ongoing trip pill */}
-              <div className="absolute top-12 right-4 bg-white rounded-2xl shadow-xl p-4 w-[180px]">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
+              <div className="absolute -right-2 bottom-12 w-[220px] rounded-[20px] bg-white p-4 shadow-[0_18px_45px_rgba(24,30,75,0.16)] sm:right-[-50px]">
+                <div className="mb-3 flex items-center gap-3">
+                  <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
                     <Image
                       src="https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=200"
                       alt="Trip to Rome"
@@ -114,16 +108,16 @@ export default function Booking() {
                     />
                   </div>
                   <div>
-                    <p className="text-[#7B8593] text-[10px]">Ongoing</p>
-                    <p className="text-[#181E4B] font-bold text-[12px]">Trip to rome</p>
+                    <p className="text-[12px] text-[#84829A]">Ongoing</p>
+                    <p className="text-[16px] font-semibold text-[#080809]">Trip to rome</p>
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[10px] text-[#7B8593]">40% completed</span>
+                  <div className="mb-2 flex items-center justify-between">
+                    <span className="text-[13px] text-[#84829A]"><span className="font-semibold text-[#8A79DF]">40%</span> completed</span>
                   </div>
-                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full w-[40%] bg-[#8B5CF6] rounded-full" />
+                  <div className="h-1.5 overflow-hidden rounded-full bg-[#F5F5F5]">
+                    <div className="h-full w-[40%] rounded-full bg-[#8B5CF6]" />
                   </div>
                 </div>
               </div>

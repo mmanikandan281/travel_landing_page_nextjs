@@ -24,40 +24,40 @@ const destinations = [
 
 export default function Destinations() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
-          <p className="text-[#7B8593] font-medium text-sm tracking-[3px] uppercase mb-3">
+    <section className="relative overflow-hidden bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mb-16 text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#5E6282]">
             Top Selling
           </p>
-          <h2 className="text-[42px] md:text-[50px] font-black text-[#181E4B] leading-tight">
+          <h2 className="font-volkhov text-[2.2rem] md:text-[3.1rem] font-bold leading-tight text-[#14183E]">
             Top Destinations
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {destinations.map((dest, index) => (
             <div
               key={index}
-              className="group cursor-pointer"
+              className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-md shadow-[#181E4B]/8 transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
-              <div className="relative overflow-hidden rounded-2xl mb-5 aspect-[3/4]">
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={dest.image}
                   alt={dest.name}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
 
-              <div className="px-1">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-[#181E4B] font-bold text-[17px]">{dest.name}</h3>
-                  <span className="text-[#181E4B] font-bold text-[17px]">{dest.price}</span>
+              <div className="space-y-3 px-5 py-6">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-[18px] font-semibold text-[#14183E]">{dest.name}</h3>
+                  <span className="text-[18px] font-semibold text-[#14183E]">{dest.price}</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#7B8593] text-[14px]">
-                  <Navigation size={14} className="text-[#7B8593]" />
+                <div className="flex items-center gap-2 text-[16px] text-[#5E6282]">
+                  <Navigation size={16} className="text-[#5E6282]" />
                   <span>{dest.duration}</span>
                 </div>
               </div>
@@ -66,8 +66,7 @@ export default function Destinations() {
         </div>
       </div>
 
-      {/* Decorative spiral */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-20">
+      <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 opacity-20 lg:block">
         <svg width="60" height="120" viewBox="0 0 60 120" fill="none">
           {[0, 1, 2, 3, 4].map((i) => (
             <circle
